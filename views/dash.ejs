@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Skin Party</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+        <div class="col-sm-12">
+            <div class="page-header username">
+               <img src="<%=userPhoto%>" class="avatar"height="300" width="300" style="margin: 0 auto; border:1px solid black;"/>
+                <h1>Profile Name: <%= profileName %></h1>
+                <h1>SteamID: <%= steamId %></h1>
+            </div>
+        </div>
+    </div>
+    
+                <% for(var i = 0;i < unHashItems.length;i++){%>
+                <div class="container">
+                    <div class="row text-center">
+                    <div class="panel panel-default">
+                    <div class="panel-heading"><h3><%= inventory[unHashItems[i]].name%></h3></div>
+                    <div class="panel-body">
+                <p><%= inventory[unHashItems[i]].name%></p>
+                
+                <img src="http://steamcommunity-a.akamaihd.net/economy/image/<%= inventory[unHashItems[i]].icon_url%>" alt="">
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <%}%>
+
+    
+    <a class="btn" href="<%=tradeUrl%>" target="_blank">Send Trade Request</a>
+    <a class="btn" href="/tradeUrl">Add tradeUrl</a>
+    <a class="btn" href="/logout">logout</a>
+</body>
+</html>
